@@ -1,0 +1,109 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #777;
+  padding-top: 40px;
+  padding-left: 40px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+}
+
+img {
+  border: none;
+}
+
+tr {
+  vertical-align: top;
+}
+
+div.page {
+  width: 600px;
+  background-color: white;
+  padding: 15px;
+}
+
+div.header {
+  border-bottom: 1px solid black;
+  margin-bottom: 30px;
+}
+
+.errors {
+  color: red;
+  background-color: #fcc;
+  padding: 10px;
+  border: 1px solid red;
+}
+
+.label {
+  font-weight: bold;
+  padding-top: 15px;
+}
+
+.example {
+  color: #777;
+  font-family: monospace;
+}
+
+.hint {
+  font-size: 70%;
+}
+
+td.right {
+  vertical-align:text-top;
+  padding-left: 20px;
+}
+
+table.decision {
+  border: 1px solid gray; 
+  border-collapse: collapse;
+}
+
+table.decision tr.header {
+  background-color: #ded;
+}
+
+table.decision tr.header td.highlight {
+  background-color: #dd9;
+}
+
+table.decision tr.odd {
+  background-color: #efe;
+  border-top: 1px dotted gray;
+  border-bottom: 1px dotted gray;
+}
+
+table.decision tr.odd td.highlight {
+  background-color: #ee9;
+}
+
+table.decision tr.even {
+  background-color: #fff;
+  border-top: 1px dotted gray;
+  border-bottom: 1px dotted gray;
+}
+
+table.decision tr.even td.highlight {
+  background-color: #ff9;
+}
+
+table.decision td {
+  border: none;
+  width: 85px;
+  text-align: center;
+}
+
+table.decision td.option {
+  width: 140px;
+  text-align: right;
+}
+
+
+
+
+
+

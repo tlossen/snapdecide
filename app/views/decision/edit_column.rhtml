@@ -1,0 +1,54 @@
+<h3><%= h @decision.question %></h3>
+
+<% form_tag do %>        
+
+<table class="decision" cellpadding="5">
+  
+  <tr class="header">
+    <td>&nbsp;</td>
+    <% @decision.participants.each do |participant| %>
+      <% if participant == @participant %>
+        <td class="highlight">
+          <%= participant.name %>
+        </td>
+      <% else %>
+        <td><%= link_to participant.name,
+          :action => :edit_column, :participant_id => participant.id %></td>
+      <% end %>
+    <% end %>
+  </tr>
+
+  <% @decision.option_names.each_with_index do |option, i| %>
+    <tr class="<%= row_class(i) %>">
+      <td class="option"><%= option %></td>
+      <% @decision.participants.each do |participant| %>
+        <% answer = participant.answer(i) %>
+        <% if participant == @participant %>
+          <td class="highlight">
+            <select name="answer[<%= i %>]">
+              <%= options_for_select [' ', '+', '-'], answer %>
+            </select>
+          </td>
+        <% else %>
+          <td><%= image_tag icon(answer) %></td>
+        <% end %>
+      <% end %>
+    </tr>
+  <% end %>
+  
+  <tr class="<%= row_class(@decision.option_names.size) %>">
+    <td>&nbsp;</td>
+    <% @decision.participants.each do |participant| %>
+      <% if participant == @participant %>
+        <td class="highlight">
+          <input type="submit" value="Save"/>
+        </td>
+      <% else %>
+        <td>&nbsp;</td>
+      <% end %>
+    <% end %>
+  </tr>
+
+</table>
+
+<% end %>

@@ -1,0 +1,38 @@
+<h3><%= h @decision.question %></h3>
+
+<table class="decision" cellpadding="5">
+  
+  <tr class="header">
+    <td>&nbsp;</td>
+    <% @decision.participants.each do |participant| %>
+      <td><%= link_to participant.name,
+        :action => :edit_column, :participant_id => participant.id %></td>
+    <% end %>
+  </tr>
+
+  <% @decision.option_names.each_with_index do |option, i| %>
+    <tr class="<%= row_class(i) %>">
+      <td class="option">
+        <%= option %>
+      </td>
+      <% @decision.participants.each do |participant| %>
+        <td><%= image_tag icon(participant.answer(i)) %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  
+</table>
+
+<p>
+  <% form_tag :action => :add_participant do %>
+  add another person:
+  <input type="text" name="name" size="20"/>
+  <% end %>
+</p>
+
+<p>
+  <% form_tag :action => :add_option do %>
+  add another option:
+  <input type="text" name="name" size="20"/>
+  <% end %>
+</p>

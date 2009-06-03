@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  database: snapdecide_development
+  encoding: UTF8
+  username: tim
+  password: xxx
+  host: localhost
+
+test:
+  adapter: postgresql
+  database: snapdecide_test
+  encoding: UTF8
+  username: tim
+  password: xxx
+  host: localhost
+
+production:
+  adapter: postgresql
+  database: snapdecide_production
+  encoding: UTF8
+  username: tim
+  password: xxx
+  host: localhost
